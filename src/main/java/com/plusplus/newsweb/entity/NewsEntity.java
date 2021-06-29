@@ -2,6 +2,7 @@ package com.plusplus.newsweb.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import javax.persistence.*;
 @Table(name = "news")
 @Getter @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class NewsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,15 +37,6 @@ public class NewsEntity {
     private String source;
 
     @Column(name = "time_posting")
-    private String time_posting;
+    private String timePosting;
 
-    public NewsEntity(String title, String description, String avatar, String content, String author, String source, String timePosting) {
-        this.title = title;
-        this.description = description;
-        this.avatar = avatar;
-        this.content = content;
-        this.author = author;
-        this.source = source;
-        this.time_posting = timePosting;
-    }
 }

@@ -1,5 +1,6 @@
 package com.plusplus.newsweb.controller;
 
+import com.plusplus.newsweb.controller.request.NewNewsRequest;
 import com.plusplus.newsweb.entity.NewsEntity;
 import com.plusplus.newsweb.service.NewsService;
 import org.slf4j.Logger;
@@ -20,7 +21,7 @@ public class NewsController {
     NewsService service;
 
     @PostMapping(name = "/add")
-    public List<NewsEntity> addNews(@RequestBody List<NewsEntity> listNews){
+    public List<NewsEntity> addNews(@RequestBody List<NewNewsRequest> listNews){
         return service.addNewsEntity(listNews);
     }
 
