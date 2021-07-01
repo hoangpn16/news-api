@@ -6,8 +6,12 @@ import com.plusplus.newsweb.entity.NewsRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,16 +45,25 @@ public class NewsService {
                 if (entity.getSource() != null) {
                     newsEntity.setSource(entity.getSource());
                 }
-                if (entity.getTime_posting() != null) {
-                    newsEntity.setTimePosting(entity.getTime_posting());
-                }
-
+//                if (entity.getTime_posting() != null) {
+                    newsEntity.setTimePosting(Timestamp.valueOf(LocalDateTime.now()));
+//                }
+                newsEntity.setStatus("active");
                 data.add(newsEntity);
             }
 
         }
         return repo.saveAll(data);
     }
+
+
+    public List<NewsEntity> getNewsEntities(String status, String orderBy, Integer pageNum){
+        Sort sort = Sort.by(Sort.Direction.DESC, orderBy);
+        PageRequest pageRequest = PageRequest.of(pageNum, 1, sort);
+        List<NewsEntity> data = repo.findAllByStatus(status,pageRequest);
+        return data;
+    }
+
 
 
 }

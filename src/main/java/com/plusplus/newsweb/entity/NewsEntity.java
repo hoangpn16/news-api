@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "news")
@@ -37,6 +38,9 @@ public class NewsEntity {
     private String source;
 
     @Column(name = "time_posting")
-    private String timePosting;
+    private Timestamp timePosting;
+
+    @Column(name = "status")
+    private String status;
 
 }
