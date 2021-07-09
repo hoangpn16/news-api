@@ -45,9 +45,9 @@ public class NewsService {
                 if (entity.getSource() != null) {
                     newsEntity.setSource(entity.getSource());
                 }
-//                if (entity.getTime_posting() != null) {
-                    newsEntity.setTimePosting(Timestamp.valueOf(LocalDateTime.now()));
-//                }
+                if (entity.getTime_posting() != null) {
+                    newsEntity.setTimePosting(entity.getTime_posting());
+                }
                 newsEntity.setStatus("active");
                 data.add(newsEntity);
             }
@@ -59,9 +59,14 @@ public class NewsService {
 
     public List<NewsEntity> getNewsEntities(String status, String orderBy, Integer pageNum){
         Sort sort = Sort.by(Sort.Direction.DESC, orderBy);
-        PageRequest pageRequest = PageRequest.of(pageNum, 1, sort);
+        PageRequest pageRequest = PageRequest.of(pageNum, 6, sort);
         List<NewsEntity> data = repo.findAllByStatus(status,pageRequest);
         return data;
+    }
+
+    public NewsEntity getContentById(Integer id){
+        NewsEntity content = repo.findAllById(id);
+        return content;
     }
 
 

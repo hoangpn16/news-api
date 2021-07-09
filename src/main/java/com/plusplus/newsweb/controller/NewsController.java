@@ -28,5 +28,9 @@ public class NewsController {
         return service.getNewsEntities("active",orderBy, pageNum);
     }
 
+    @GetMapping(value = "/getcontent")
+    public NewsEntity getContent(@RequestParam(name = "ID") Integer ID){
+        return service.getContentById(ID);
+    }
 
 }

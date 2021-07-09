@@ -38,7 +38,7 @@ public class NewsEntity {
     private String source;
 
     @Column(name = "time_posting")
-    private Timestamp timePosting;
+    private String timePosting;
 
     @Column(name = "status")
     private String status;

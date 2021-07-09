@@ -12,5 +12,5 @@ public class NewNewsRequest {
     private String content;
     private String author;
     private String source;
-//    private String time_posting;
+    private String time_posting;
 }

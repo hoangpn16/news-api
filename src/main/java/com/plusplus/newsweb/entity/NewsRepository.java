@@ -10,4 +10,5 @@ import java.util.List;
 public interface NewsRepository extends JpaRepository<NewsEntity, Integer> {
     NewsEntity findByTitle(String title);
     List<NewsEntity> findAllByStatus(String Status, Pageable pageable);
+    NewsEntity findAllById(Integer id);
 }
