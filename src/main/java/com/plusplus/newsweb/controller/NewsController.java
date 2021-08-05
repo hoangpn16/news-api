@@ -17,13 +17,14 @@ public class NewsController {
     @Autowired
     NewsService service;
 
-    @PostMapping(name = "/add")
+    @PostMapping(value = "/add")
     public List<NewsEntity> addNews(@RequestBody List<NewNewsRequest> listNews){
         return service.addNewsEntity(listNews);
+
     }
 
-    @GetMapping(name = "/getdata")
-    public List<NewsEntity> getNews(@RequestParam(name = "orderBy", defaultValue = "timePosting") String orderBy,
+    @GetMapping(value = "/getdata")
+    public List<NewsEntity> getNews(@RequestParam(name = "orderBy", defaultValue = "timeOrderBy") String orderBy,
                                     @RequestParam(name = "pageNum", defaultValue = "0") Integer pageNum){
         return service.getNewsEntities("active",orderBy, pageNum);
     }
@@ -32,5 +33,6 @@ public class NewsController {
     public NewsEntity getContent(@RequestParam(name = "ID") Integer ID){
         return service.getContentById(ID);
     }
+
 
 }

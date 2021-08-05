@@ -12,14 +12,14 @@ public class BeanConfig {
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }
-    @Bean
-    public WebMvcConfigurerAdapter corsConfigurer() {
-        return new WebMvcConfigurerAdapter() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
-            }
-        };
-    }
+//    @Bean
+//    public WebMvcConfigurerAdapter corsConfigurer() {
+//        return new WebMvcConfigurerAdapter() {
+//            @Override
+//            public void addCorsMappings(CorsRegistry registry) {
+//                registry.addMapping("/**")
+//                        .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
+//            }
+//        };
+//    }
 }

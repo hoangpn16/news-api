@@ -1,5 +1,6 @@
 package com.plusplus.newsweb.entity;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,11 +10,12 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "news")
-@Getter @Setter
+@Table(name = "blogs")
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class NewsEntity {
+public class BlogsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -31,19 +33,13 @@ public class NewsEntity {
     @Column(name = "content")
     private String content;
 
-    @Column(name = "author")
-    private String author;
-
-    @Column(name = "source")
-    private String source;
-
     @Column(name = "time_posting")
-    private String timePosting;
+    private Timestamp timePosting;
 
     @Column(name = "status")
     private String status;
 
-    @Column(name = "time_orderby")
-    private Integer timeOrderBy;
+    @Column(name = "author")
+    private String author;
 
 }

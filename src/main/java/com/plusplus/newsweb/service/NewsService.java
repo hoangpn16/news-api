@@ -2,7 +2,7 @@ package com.plusplus.newsweb.service;
 
 import com.plusplus.newsweb.controller.request.NewNewsRequest;
 import com.plusplus.newsweb.entity.NewsEntity;
-import com.plusplus.newsweb.entity.NewsRepository;
+import com.plusplus.newsweb.entity.repository.NewsRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +10,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,6 +45,18 @@ public class NewsService {
                 }
                 if (entity.getTime_posting() != null) {
                     newsEntity.setTimePosting(entity.getTime_posting());
+                    try {
+                        String str[] = newsEntity.getTimePosting().split(" ");
+                        String str1[] = str[0].split("/");
+                        int day = Integer.parseInt(str1[0]);
+                        int month = Integer.parseInt(str1[1]);
+                        int year = Integer.parseInt(str1[2]);
+                        int time_order = year*10000 + month*100 + day;
+                        newsEntity.setTimeOrderBy(time_order);
+                    }
+                    catch (Exception e){
+                        System.out.println(e);
+                    }
                 }
                 newsEntity.setStatus("active");
                 data.add(newsEntity);
@@ -68,7 +78,5 @@ public class NewsService {
         NewsEntity content = repo.findAllById(id);
         return content;
     }
-
-
 
 }
