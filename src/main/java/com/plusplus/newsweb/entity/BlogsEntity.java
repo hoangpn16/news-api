@@ -42,4 +42,12 @@ public class BlogsEntity {
     @Column(name = "author")
     private String author;
 
+    @Column(name = "category_id")
+    private Integer categoryId;
+
+    @Column(name = "view")
+    private Integer view;
+
+    @Column(name = "like")
+    private Integer like;
 }

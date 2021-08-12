@@ -9,22 +9,19 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "img_blogs")
+@Table(name = "category")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Img_BlogsEntity {
+public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "imgs")
-    private String imgs;
-
-    @Column(name = "blogs_id")
-    private String blogId;
+    @Column(name = "category_name")
+    private String categoryName;
 
 
 }
