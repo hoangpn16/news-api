@@ -12,12 +12,18 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class NewsService {
     private static final Logger logger = LoggerFactory.getLogger(NewsService.class);
     @Autowired
     NewsRepository repo;
+
+
 
     public List<NewsEntity> addNewsEntity(List<NewNewsRequest> listNews) {
         List<NewsEntity> data = new ArrayList<>();
@@ -43,18 +49,17 @@ public class NewsService {
                 if (entity.getSource() != null) {
                     newsEntity.setSource(entity.getSource());
                 }
-                if (entity.getTime_posting() != null) {
-                    newsEntity.setTimePosting(entity.getTime_posting());
+                if (entity.getTimePost() != null) {
+                    newsEntity.setTimePosting(entity.getTimePost());
                     try {
                         String str[] = newsEntity.getTimePosting().split(" ");
                         String str1[] = str[0].split("/");
                         int day = Integer.parseInt(str1[0]);
                         int month = Integer.parseInt(str1[1]);
                         int year = Integer.parseInt(str1[2]);
-                        int time_order = year*10000 + month*100 + day;
+                        int time_order = year * 10000 + month * 100 + day;
                         newsEntity.setTimeOrderBy(time_order);
-                    }
-                    catch (Exception e){
+                    } catch (Exception e) {
                         System.out.println(e);
                     }
                 }
@@ -63,19 +68,22 @@ public class NewsService {
             }
 
         }
+
         return repo.saveAll(data);
     }
 
 
-    public List<NewsEntity> getNewsEntities(String status, String orderBy, Integer pageNum){
+    public List<NewsEntity> getNewsEntities(String status, String orderBy, Integer pageNum) {
         Sort sort = Sort.by(Sort.Direction.DESC, orderBy);
         PageRequest pageRequest = PageRequest.of(pageNum, 6, sort);
-        List<NewsEntity> data = repo.findAllByStatus(status,pageRequest);
+        List<NewsEntity> data = repo.findAllByStatus(status, pageRequest);
+//        setActiveNews(getNewsList());
         return data;
     }
 
-    public NewsEntity getContentById(Integer id){
+    public NewsEntity getContentById(Integer id) {
         NewsEntity content = repo.findAllById(id);
+//        content.setStatus("ACTádasdasdasdIVE");
         return content;
     }
 

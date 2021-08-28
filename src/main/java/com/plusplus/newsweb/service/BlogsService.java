@@ -4,12 +4,15 @@ package com.plusplus.newsweb.service;
 import com.plusplus.newsweb.controller.request.NewBlogsRequest;
 import com.plusplus.newsweb.entity.BlogsEntity;
 import com.plusplus.newsweb.entity.CategoryEntity;
+import com.plusplus.newsweb.entity.NewsEntity;
 import com.plusplus.newsweb.entity.repository.AuthorRepository;
 import com.plusplus.newsweb.entity.repository.BlogsRepository;
 import com.plusplus.newsweb.entity.repository.CategoryRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
@@ -22,39 +25,36 @@ public class BlogsService {
     @Autowired
     BlogsRepository blogsRepository;
     @Autowired
-    AuthorRepository authorRepository;
-    @Autowired
     CategoryRepository categoryRepository;
 
 
     public BlogsEntity addBlogsEntity(NewBlogsRequest Blogs) {
-       BlogsEntity blogsEntity = new BlogsEntity();
+        BlogsEntity blogsEntity = new BlogsEntity();
 //            blogsEntity = new BlogsEntity();
         if (Blogs.getAuthor() != null) {
             blogsEntity.setAuthor(Blogs.getAuthor());
-            if (Blogs.getTitle() != null) {
-                blogsEntity.setTitle(Blogs.getTitle());
-            }
-            if (Blogs.getDescription() != null) {
-                blogsEntity.setDescription(Blogs.getDescription());
-            }
-            if (Blogs.getAvatar() != null) {
-                blogsEntity.setAvatar(Blogs.getAvatar());
-            }
-            if (Blogs.getContent() != null) {
-                blogsEntity.setContent(Blogs.getContent());
-            }
-            if (Blogs.getCategoryId() != null) {
-                blogsEntity.setCategoryId(Blogs.getCategoryId());
-            }
-            blogsEntity.setTimePosting(new Timestamp(System.currentTimeMillis()));
-            blogsEntity.setStatus("ACTIVE");
-            blogsEntity.setLike(0);
-            blogsEntity.setView(0);
         }
-
+        if (Blogs.getTitle() != null) {
+            blogsEntity.setTitle(Blogs.getTitle());
+        }
+        if (Blogs.getDescription() != null) {
+            blogsEntity.setDescription(Blogs.getDescription());
+        }
+        if (Blogs.getAvatar() != null) {
+            blogsEntity.setAvatar(Blogs.getAvatar());
+        }
+        if (Blogs.getContent() != null) {
+            blogsEntity.setContent(Blogs.getContent());
+        }
+        if (Blogs.getCategoryId() != null) {
+            blogsEntity.setCategoryId(Blogs.getCategoryId());
+        }
+        blogsEntity.setTimePosting(new Timestamp(System.currentTimeMillis()));
+        blogsEntity.setStatus("ACTIVE");
+        blogsEntity.setLikePost(0);
+        blogsEntity.setViewPost(0);
         return blogsRepository.save(blogsEntity);
-    }
+}
 
 
     public List<BlogsEntity> findAllBlogs(String status) {
@@ -87,4 +87,19 @@ public class BlogsService {
         List<CategoryEntity> categoryEntityList = categoryRepository.findAll();
         return categoryEntityList;
     }
+
+    public List<BlogsEntity> getBlogEntities(String status, String orderBy, Integer pageNum){
+        Sort sort = Sort.by(Sort.Direction.DESC, orderBy);
+        PageRequest pageRequest = PageRequest.of(pageNum, 9, sort);
+        List<BlogsEntity> data = blogsRepository.findAllByStatus(status,pageRequest);
+        return data;
+    }
+
+    public List<BlogsEntity> getBlogsByCate(Integer cateId, String orderBy, Integer pageNum){
+        Sort sort = Sort.by(Sort.Direction.DESC, orderBy);
+        PageRequest pageRequest = PageRequest.of(pageNum, 9, sort);
+        List<BlogsEntity> data = blogsRepository.findAllByCategoryId(cateId, pageRequest);
+        return data;
+    }
+
 }

@@ -4,6 +4,8 @@ package com.plusplus.newsweb.controller.request;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Timestamp;
+
 
 @Getter
 @Setter
@@ -16,6 +18,6 @@ public class NewBlogsRequest {
     private Integer categoryId;
 //    private Integer like;
 //    private Integer view;
-//    private String time_posting;
+//    private Timestamp time_posting;
 //    private String status;
 }

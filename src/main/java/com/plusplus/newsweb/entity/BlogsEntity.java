@@ -45,9 +45,9 @@ public class BlogsEntity {
     @Column(name = "category_id")
     private Integer categoryId;
 
-    @Column(name = "view")
-    private Integer view;
+    @Column(name = "view_post")
+    private Integer viewPost;
 
-    @Column(name = "like")
-    private Integer like;
+    @Column(name = "like_post")
+    private Integer likePost;
 }

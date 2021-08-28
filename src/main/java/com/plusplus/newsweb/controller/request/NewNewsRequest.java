@@ -1,5 +1,6 @@
 package com.plusplus.newsweb.controller.request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,5 +13,6 @@ public class NewNewsRequest {
     private String content;
     private String author;
     private String source;
-    private String time_posting;
+    @JsonProperty("time_posting")
+    private String timePost;
 }
