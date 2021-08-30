@@ -1,40 +1,42 @@
 package com.plusplus.newsweb.controller;
 
-import com.plusplus.newsweb.controller.request.NewNewsRequest;
 import com.plusplus.newsweb.entity.NewsEntity;
 import com.plusplus.newsweb.service.NewsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+//import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping(value = "/news")
+@Controller
+//@RequestMapping(value = "/news")
 public class NewsController {
-    private static final Logger logger = LoggerFactory.getLogger(NewsController.class);
+//    public static Integer pageNum=0;
+    private static final Logger logger = LoggerFactory.getLogger(NewsRestController.class);
     @Autowired
     NewsService service;
 
-    @PostMapping(value = "/add")
-    public List<NewsEntity> addNews(@RequestBody List<NewNewsRequest> listNews){
-        return service.addNewsEntity(listNews);
-
-    }
-//đây
-    @GetMapping(value = "/getdata")
+    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String getNews(Model model, @RequestParam(name = "orderBy", defaultValue = "timeOrderBy") String orderBy,
-                                    @RequestParam(name = "pageNum", defaultValue = "0") Integer pageNum){
-        List<NewsEntity> listNews =  service.getNewsEntities("active",orderBy, pageNum);
+                          @RequestParam(name = "pageNum", defaultValue = "0") Integer pageNum) {
+        List<NewsEntity> listNews = service.getNewsEntities("active", orderBy, pageNum);
         model.addAttribute("listNews", listNews);
+        model.addAttribute("pageNum", pageNum);
         return "news";
     }
 
-    @GetMapping(value = "/getcontent")
-    public NewsEntity getContent(@RequestParam(name = "ID") Integer ID){
-        return service.getContentById(ID);
+    @GetMapping(value = "/detail")
+    public String getContent(Model model ,@RequestParam(name = "ID") Integer ID) {
+        NewsEntity newsEntity = service.getContentById(ID);
+        model.addAttribute("newsEntity", newsEntity);
+        return "news-detail";
     }
 
 

@@ -2,16 +2,16 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900');
 @charset "utf-8";
 
-/** 
-* 
+/**
+*
 * -----------------------------------------------------------------------------
 *
 * Template : Educavo - Education HTML Template
 * Author : rs-theme
-* Author URI : http://www.rstheme.com/ 
+* Author URI : http://www.rstheme.com/
 *
 * -----------------------------------------------------------------------------
-* 
+*
 **/
 
 
@@ -64,7 +64,7 @@
     01. General CSS
 	old: #ff5421
 	new: #01a2a6
-	
+
 -------------------------------------*/
 
 html,
@@ -6926,7 +6926,7 @@ body .modal-backdrop {
     border: 1px solid #dfe9eb;
     border-radius: 5px;
     transition: all 0.3s ease;
-   
+
 }
 
 #list-it{
@@ -6999,7 +6999,7 @@ body .modal-backdrop {
 .rs-popular-courses.style1 .courses-item1 .img-part1{
     text-align: center;
 
-    
+
 }
 
 
@@ -7033,7 +7033,7 @@ body .modal-backdrop {
 
 .rs-popular-courses.style1 .courses-item .content-part .title {
     font-size: 24px;
-   
+
 }
 .rs-popular-courses.style1 .courses-item1 .content-part .title {
     font-size: 24px;
@@ -7884,7 +7884,7 @@ body .modal-backdrop {
     margin: 0 0 10px;
     line-height: 30px;
     font-size: 22px;
-    
+
 }
 
 .rs-popular-courses.main-home .courses-item .courses-grid .content-part .title a {
