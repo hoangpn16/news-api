@@ -18,7 +18,7 @@
 <!--    <meta property="og:description" th:content="${newsEntity.getDescription()}"/>-->
     <meta property="fb:app_id"          content="1507619909597862" />
     <meta property="og:type"            content="article" />
-    <meta property="og:url"             th:content="'https://plusplus.vn/news/detail?ID='+${newsEntity.getId()} +'&'+${titleSEO}" />
+    <meta property="og:url"             th:content="'https://plusplus.vn/news/detail?ID='+${newsEntity.getId()} +'&title='+${titleSEO}" />
     <meta property="og:title"           th:content="${newsEntity.getTitle()}"/>
     <meta property="og:image"           th:content="${newsEntity.getAvatar()}" />
     <meta property="og:description"    th:content="${newsEntity.getDescription()}" />
