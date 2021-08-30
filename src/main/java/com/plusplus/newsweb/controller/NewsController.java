@@ -34,7 +34,7 @@ public class NewsController {
     }
 
     @GetMapping(value = "/detail")
-    public String getContent(Model model ,@RequestParam(name = "ID") Integer ID) {
+    public String getContent(Model model, @RequestParam(name = "ID") Integer ID) {
         logger.info("Get detail newID [{}]", ID);
         NewsEntity newsEntity = service.getContentById(ID);
         model.addAttribute("newsEntity", newsEntity);
