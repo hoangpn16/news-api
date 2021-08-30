@@ -20,7 +20,7 @@ public class NewsRestController {
 
     @PostMapping(value = "/add")
     public List<NewsEntity> addNews(@RequestBody List<NewNewsRequest> listNews){
-        logger.info("Adding news [{}]", listNews);
+        logger.info("Adding [{}] news", listNews.size());
         return service.addNewsEntity(listNews);
 
     }
