@@ -15,4 +15,17 @@ public class NewNewsRequest {
     private String source;
     @JsonProperty("time_posting")
     private String timePost;
+
+    @Override
+    public String toString() {
+        return "NewNewsRequest{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", content='" + content + '\'' +
+                ", author='" + author + '\'' +
+                ", source='" + source + '\'' +
+                ", timePost='" + timePost + '\'' +
+                '}';
+    }
 }

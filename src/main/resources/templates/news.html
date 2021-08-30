@@ -194,7 +194,7 @@
                                                     <a href="https://plusplus.vn/recruitments.html">Tuyển dụng</a>
                                                 </li>
                                                 <li class="menu-item-has-children right">
-                                                    <a href="/">Tin tức công nghệ</a>
+                                                    <a href="/news/">Tin tức công nghệ</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -350,12 +350,12 @@
                         <div class="col-lg-12 mb-70">
                             <div class="blog-item">
                                 <div class="blog-img">
-                                    <a class="link-img" th:href="@{/detail(ID=${news.getId()})}"><img
+                                    <a class="link-img" th:href="@{/news/detail(ID=${news.getId()})}"><img
                                             class="blog-img1" th:src="${news.getAvatar()}" alt=""></a>
                                 </div>
                                 <div class="blog-content">
                                     <h3 class="blog-title"><a class="title"
-                                                              th:href="@{/detail(ID=${news.getId()})}"
+                                                              th:href="@{/news/detail(ID=${news.getId()})}"
                                                               th:text="${news.getTitle}"></a></h3>
                                     <div class="blog-meta">
                                         <ul class="btm-cate">
@@ -374,7 +374,7 @@
                                     <div class="blog-desc" th:text="${news.getDescription}">
                                     </div>
                                     <div class="blog-button">
-                                        <a class="blog-btn" th:href="@{/detail(ID=${news.getId()})}">Đọc tiếp</a>
+                                        <a class="blog-btn" th:href="@{/news/detail(ID=${news.getId()})}">Đọc tiếp</a>
                                     </div>
                                 </div>
                             </div>
@@ -385,9 +385,9 @@
             </div>
             <div class="pagination-area orange-color text-center mt-30 md-mt-0">
                 <ul class="pagination-part">
-                    <li><a id="clickPrevious" th:href="@{/(pageNum=${pageNum-1})}">
+                    <li><a id="clickPrevious" th:href="@{/news/(pageNum=${pageNum-1})}">
                         Previous <i class="fa fa-long-arrow-left"></i></a></li>
-                    <li><a id="clickNext" th:href="@{/(pageNum=${pageNum+1})}">Next <i class="fa fa-long-arrow-right"></i></a>
+                    <li><a id="clickNext" th:href="@{/news/(pageNum=${pageNum+1})}">Next <i class="fa fa-long-arrow-right"></i></a>
                     </li>
                 </ul>
             </div>

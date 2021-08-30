@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
-//import org.springframework.web.bind.annotation.RestController;
 
 @Controller
-//@RequestMapping(value = "/news")
+@RequestMapping(value = "/news")
 public class NewsController {
 //    public static Integer pageNum=0;
     private static final Logger logger = LoggerFactory.getLogger(NewsRestController.class);
@@ -26,7 +25,9 @@ public class NewsController {
     @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String getNews(Model model, @RequestParam(name = "orderBy", defaultValue = "timeOrderBy") String orderBy,
                           @RequestParam(name = "pageNum", defaultValue = "0") Integer pageNum) {
+        logger.info("Get list news with page [{}], orderBy [{}]", pageNum, orderBy);
         List<NewsEntity> listNews = service.getNewsEntities("active", orderBy, pageNum);
+        logger.info("Found [{}]", listNews.size());
         model.addAttribute("listNews", listNews);
         model.addAttribute("pageNum", pageNum);
         return "news";
@@ -34,6 +35,7 @@ public class NewsController {
 
     @GetMapping(value = "/detail")
     public String getContent(Model model ,@RequestParam(name = "ID") Integer ID) {
+        logger.info("Get detail newID [{}]", ID);
         NewsEntity newsEntity = service.getContentById(ID);
         model.addAttribute("newsEntity", newsEntity);
         return "news-detail";
