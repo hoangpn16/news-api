@@ -35,6 +35,7 @@ public class NewsController {
         model.addAttribute("pageNum", pageNum);
         List<NewsEntitySEO> newsEntitySEOS = new ArrayList<>();
         List<NewsEntitySEO> newsEntitySEOS2 = new ArrayList<>();
+
         for (int i = 0; i < listNews.size(); i++) {
             NewsEntitySEO entitySEO = new NewsEntitySEO();
             entitySEO.setId(listNews.get(i).getId());
