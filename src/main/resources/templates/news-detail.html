@@ -333,9 +333,9 @@
             th:text=${newsEntity.getTitle()}>
         </h3>
     </div>
-        <div id="content-news" style="padding-left: 15%; padding-right: 10%;" th:utext="${newsEntity.getContent()}" >
+    <div id="content-news" style="padding-left: 15%; padding-right: 10%;" th:utext="${newsEntity.getContent()}">
     </div>
-    <div class="fb-share-button" style="padding-left: 1434px; padding-bottom: 10px"
+    <div class="fb-share-button" style="padding-left: 50%; padding-bottom: 10px"
          th:data-href="'https://plusplus.vn/news/detail?ID='+${newsEntity.getId()} +'&title='+${titleSEO}"
          data-layout="button" data-size="large"><a target="_blank"
                                                    href="" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
