@@ -7,21 +7,18 @@
     <!-- meta tag -->
     <meta charset="utf-8">
     <title>PlusPlus - Học viện đào tạo công nghệ</title>
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="description" th:content="${newsEntity.getDescription()}">
-<!--    <meta property="fb:app_id" content="1507619909597862">-->
-<!--    <link rel="canonical" href="https://plusplus.vn"/>-->
-<!--    <meta property="og:url" th:content="'https://plusplus.vn/news/detail?ID='+${newsEntity.getId()} +'&'+${titleSEO} "/>-->
-<!--    <meta property="og:title" th:content="${newsEntity.getTitle()}"/>-->
-<!--    <meta property="og:type" content="website"/>-->
-<!--    <meta  property="og:image" th:content="${newsEntity.getAvatar()}">-->
-<!--    <meta property="og:description" th:content="${newsEntity.getDescription()}"/>-->
-    <meta property="fb:app_id"          content="1507619909597862" />
-    <meta property="og:type"            content="article" />
-    <meta property="og:url"             th:content="'https://plusplus.vn/news/detail?ID='+${newsEntity.getId()} +'&title='+${titleSEO}" />
-    <meta property="og:title"           th:content="${newsEntity.getTitle()}"/>
-    <meta property="og:image"           th:content="${newsEntity.getAvatar()}" />
-    <meta property="og:description"    th:content="${newsEntity.getDescription()}" />
+    <meta property="fb:app_id" content="1507619909597862"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url"
+          th:content="'https://plusplus.vn/news/detail?ID='+${newsEntity.getId()} +'&title='+${titleSEO}"/>
+    <meta property="og:title" th:content="${newsEntity.getTitle()}"/>
+    <meta property="og:image" th:content="${newsEntity.getAvatar()}"/>
+    <meta property="og:description" th:content="${newsEntity.getDescription()}"/>
+    <meta name="keywords" content="plusplus,học online, học java,
+        học machine learning,học computer vision, học ai, học deep learning, học vuejs,
+        học python, fullstack web">
     <!-- responsive tag -->
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -104,7 +101,8 @@
                         <div class="logo-cat-wrap">
                             <div class="logo-part">
                                 <a href="https://plusplus.vn/index.html">
-                                    <img class="sticky-logo" id="height" src="https://plusplus.vn/assets/images/logo-dark-logo.png"
+                                    <img class="sticky-logo" id="height"
+                                         src="https://plusplus.vn/assets/images/logo-dark-logo.png"
                                          alt="">
                                 </a>
                             </div>
@@ -126,7 +124,8 @@
                                                 thiệu</a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item-has-children right">
-                                                    <a href="https://plusplus.vn/teams/team_list.html">Giảng viên, chuyên gia</a>
+                                                    <a href="https://plusplus.vn/teams/team_list.html">Giảng viên,
+                                                        chuyên gia</a>
                                                 </li>
                                                 <li class="menu-item-has-children">
                                                     <a href="https://plusplus.vn/about.html">Giới thiệu trung tâm</a>
@@ -145,42 +144,56 @@
                                                 <li class="menu-item-has-children right">
                                                     <a href="#">Machine Learning, AI</a>
                                                     <ul class="sub-menu right">
-                                                        <li><a href="https://plusplus.vn/courses/data-engineer.html">Data Engineer</a>
+                                                        <li><a href="https://plusplus.vn/courses/data-engineer.html">Data
+                                                            Engineer</a>
                                                         </li>
                                                         <li><a href="https://plusplus.vn/courses/computer-vision.html">Computer
                                                             Vision</a></li>
-                                                        <li><a href="https://plusplus.vn/courses/speech-recognition.html">Speech
-                                                            Recognition</a></li>
+                                                        <li>
+                                                            <a href="https://plusplus.vn/courses/speech-recognition.html">Speech
+                                                                Recognition</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="menu-item-has-children">
                                                     <a href="#">Khóa học dài hạn</a>
                                                     <ul class="sub-menu right">
-                                                        <li><a href="https://plusplus.vn/courses/java_backend.html">Lập trình Java
+                                                        <li><a href="https://plusplus.vn/courses/java_backend.html">Lập
+                                                            trình Java
                                                             Backend</a></li>
-                                                        <li><a href="https://plusplus.vn/courses/java_fullstack.html">Lập trình Java
+                                                        <li><a href="https://plusplus.vn/courses/java_fullstack.html">Lập
+                                                            trình Java
                                                             Full-Stack</a></li>
-                                                        <li><a href="https://plusplus.vn/courses/python_fullstack.html">Lập trình Python
+                                                        <li><a href="https://plusplus.vn/courses/python_fullstack.html">Lập
+                                                            trình Python
                                                             Full-Stack</a></li>
-                                                        <li><a href="https://plusplus.vn/courses/data_science.html">Data Science</a>
+                                                        <li><a href="https://plusplus.vn/courses/data_science.html">Data
+                                                            Science</a>
                                                         </li>
-                                                        <li><a href="https://plusplus.vn/courses/deep_learning.html">Deep Learning</a>
+                                                        <li><a href="https://plusplus.vn/courses/deep_learning.html">Deep
+                                                            Learning</a>
                                                         </li>
-                                                        <li><a href="https://plusplus.vn/courses/auto_test_python.html">Test Tự Động với
+                                                        <li><a href="https://plusplus.vn/courses/auto_test_python.html">Test
+                                                            Tự Động với
                                                             Python</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="menu-item-has-children">
                                                     <a href="#">Khóa học ngắn hạn</a>
                                                     <ul class="sub-menu right">
-                                                        <li><a href="https://plusplus.vn/courses/java_core.html">Java core</a></li>
-                                                        <li><a href="https://plusplus.vn/courses/python_core.html">Python core</a></li>
-                                                        <li><a href="https://plusplus.vn/courses/frontend.html">Frontend cơ bản</a></li>
-                                                        <li><a href="https://plusplus.vn/courses/reactjs.html">Lập trình web với ReactJs
+                                                        <li><a href="https://plusplus.vn/courses/java_core.html">Java
+                                                            core</a></li>
+                                                        <li><a href="https://plusplus.vn/courses/python_core.html">Python
+                                                            core</a></li>
+                                                        <li><a href="https://plusplus.vn/courses/frontend.html">Frontend
+                                                            cơ bản</a></li>
+                                                        <li><a href="https://plusplus.vn/courses/reactjs.html">Lập trình
+                                                            web với ReactJs
                                                         </a></li>
-                                                        <li><a href="https://plusplus.vn/courses/vuejs.html">Lập trình web với VueJs</a>
+                                                        <li><a href="https://plusplus.vn/courses/vuejs.html">Lập trình
+                                                            web với VueJs</a>
                                                         </li>
-                                                        <li><a href="https://plusplus.vn/courses/c-base.html">C cơ bản</a></li>
+                                                        <li><a href="https://plusplus.vn/courses/c-base.html">C cơ
+                                                            bản</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -218,10 +231,12 @@
                                                     <a href="https://plusplus.vn/contact.html">Liên hệ tuyển sinh</a>
                                                 </li>
                                                 <li class="menu-item-has-children">
-                                                    <a href="https://plusplus.vn/tutorial/hoc-truc-tuyen.html">Học trực tuyến</a>
+                                                    <a href="https://plusplus.vn/tutorial/hoc-truc-tuyen.html">Học trực
+                                                        tuyến</a>
                                                 </li>
                                                 <li class="menu-item-has-children">
-                                                    <a href="https://plusplus.vn/tutorial/1-huong-dan-thanh-toan.html">Nộp học phí</a>
+                                                    <a href="https://plusplus.vn/tutorial/1-huong-dan-thanh-toan.html">Nộp
+                                                        học phí</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -258,7 +273,8 @@
                 </div>
             </div>
             <div class="canvas-logo">
-                <a href="https://plusplus.vn/index.html"><img src="https://plusplus.vn/assets/images/logo-dark-logo.png" alt="logo"></a>
+                <a href="https://plusplus.vn/index.html"><img src="https://plusplus.vn/assets/images/logo-dark-logo.png"
+                                                              alt="logo"></a>
             </div>
             <div class="offcanvas-text">
                 <p>PlusPlus Academy đồng hành với từng cá nhân, với sự chân thành nỗ lực đem đến một môi trường giáo
@@ -317,10 +333,12 @@
             th:text=${newsEntity.getTitle()}>
         </h3>
     </div>
-    <div id="content-news" style="padding-left: 15%; padding-right: 10%;" th:utext="${newsEntity.getContent()}">
+        <div id="content-news" style="padding-left: 15%; padding-right: 10%;" th:utext="${newsEntity.getContent()}" >
     </div>
-
-</div>
+    <div class="fb-share-button" style="padding-left: 1434px; padding-bottom: 10px"
+         th:data-href="'https://plusplus.vn/news/detail?ID='+${newsEntity.getId()} +'&title='+${titleSEO}"
+         data-layout="button" data-size="large"><a target="_blank"
+                                                   href="" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
 </div>
 <!-- Main content End -->
 
@@ -331,7 +349,8 @@
             <div class="row">
                 <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
                     <div class="footer-logo mb-30">
-                        <a href="https://plusplus.vn/index.html"><img src="https://plusplus.vn/assets/images/lite-logo.png" alt=""></a>
+                        <a href="https://plusplus.vn/index.html"><img
+                                src="https://plusplus.vn/assets/images/lite-logo.png" alt=""></a>
                     </div>
                     <div class="textwidget pr-60 md-pr-15">
                         <p class="white-color">Học viện đào tạo công nghệ Plusplus - Kick start your future.</p>
