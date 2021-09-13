@@ -18,4 +18,5 @@ public interface BlogsRepository extends JpaRepository<BlogsEntity, Integer > {
     List<BlogsEntity> findAllByAuthor(String author);
     List<BlogsEntity> findAllByStatus(String Status, Pageable pageable);
     List<BlogsEntity> findAllByCategoryId(Integer cateId, Pageable pageable);
+    List<BlogsEntity> findAllByStatusAndCategoryId(String Status, Pageable pageable, Integer cateId);
 }

@@ -7,13 +7,15 @@
     <!-- meta tag -->
     <meta charset="utf-8">
     <title>PlusPlus - Học viện đào tạo công nghệ</title>
-    <meta property="fb:app_id" content="1507619909597862">
-    <link rel="canonical" href="https://plusplus.vn"/>
-    <meta property="og:url" content="https://plusplus.vn/"/>
-    <meta property="og:title" content="Tin tức công nghệ"/>
-    <meta property="og:type" content="website"/>
-    <!--    <meta  property="og:image" content="@{/images/plusplus_logo.png}">-->
-    <meta property="og:description" content="Cập nhật tin tức mới nhất về công nghệ hằng ngày"/>
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="description" th:content="${blogsEntity.getDescription()}">
+    <meta property="fb:app_id" content="1507619909597862"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url"
+          th:content="'https://plusplus.vn/news/blogs/detail?ID='+${blogsEntity.getId()} +'&title='+${titleSEO}"/>
+    <meta property="og:title" th:content="${blogsEntity.getTitle()}"/>
+    <meta property="og:image" th:content="${blogsEntity.getAvatar()}"/>
+    <meta property="og:description" th:content="${blogsEntity.getDescription()}"/>
     <meta name="keywords" content="plusplus,học online, học java,
         học machine learning,học computer vision, học ai, học deep learning, học vuejs,
         học python, fullstack web">
@@ -99,7 +101,8 @@
                         <div class="logo-cat-wrap">
                             <div class="logo-part">
                                 <a href="https://plusplus.vn/index.html">
-                                    <img class="sticky-logo" id="height" src="https://plusplus.vn/assets/images/logo-dark-logo.png"
+                                    <img class="sticky-logo" id="height"
+                                         src="https://plusplus.vn/assets/images/logo-dark-logo.png"
                                          alt="">
                                 </a>
                             </div>
@@ -121,7 +124,8 @@
                                                 thiệu</a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item-has-children right">
-                                                    <a href="https://plusplus.vn/teams/team_list.html">Giảng viên, chuyên gia</a>
+                                                    <a href="https://plusplus.vn/teams/team_list.html">Giảng viên,
+                                                        chuyên gia</a>
                                                 </li>
                                                 <li class="menu-item-has-children">
                                                     <a href="https://plusplus.vn/about.html">Giới thiệu trung tâm</a>
@@ -140,42 +144,56 @@
                                                 <li class="menu-item-has-children right">
                                                     <a href="#">Machine Learning, AI</a>
                                                     <ul class="sub-menu right">
-                                                        <li><a href="https://plusplus.vn/courses/data-engineer.html">Data Engineer</a>
+                                                        <li><a href="https://plusplus.vn/courses/data-engineer.html">Data
+                                                            Engineer</a>
                                                         </li>
                                                         <li><a href="https://plusplus.vn/courses/computer-vision.html">Computer
                                                             Vision</a></li>
-                                                        <li><a href="https://plusplus.vn/courses/speech-recognition.html">Speech
-                                                            Recognition</a></li>
+                                                        <li>
+                                                            <a href="https://plusplus.vn/courses/speech-recognition.html">Speech
+                                                                Recognition</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="menu-item-has-children">
                                                     <a href="#">Khóa học dài hạn</a>
                                                     <ul class="sub-menu right">
-                                                        <li><a href="https://plusplus.vn/courses/java_backend.html">Lập trình Java
+                                                        <li><a href="https://plusplus.vn/courses/java_backend.html">Lập
+                                                            trình Java
                                                             Backend</a></li>
-                                                        <li><a href="https://plusplus.vn/courses/java_fullstack.html">Lập trình Java
+                                                        <li><a href="https://plusplus.vn/courses/java_fullstack.html">Lập
+                                                            trình Java
                                                             Full-Stack</a></li>
-                                                        <li><a href="https://plusplus.vn/courses/python_fullstack.html">Lập trình Python
+                                                        <li><a href="https://plusplus.vn/courses/python_fullstack.html">Lập
+                                                            trình Python
                                                             Full-Stack</a></li>
-                                                        <li><a href="https://plusplus.vn/courses/data_science.html">Data Science</a>
+                                                        <li><a href="https://plusplus.vn/courses/data_science.html">Data
+                                                            Science</a>
                                                         </li>
-                                                        <li><a href="https://plusplus.vn/courses/deep_learning.html">Deep Learning</a>
+                                                        <li><a href="https://plusplus.vn/courses/deep_learning.html">Deep
+                                                            Learning</a>
                                                         </li>
-                                                        <li><a href="https://plusplus.vn/courses/auto_test_python.html">Test Tự Động với
+                                                        <li><a href="https://plusplus.vn/courses/auto_test_python.html">Test
+                                                            Tự Động với
                                                             Python</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="menu-item-has-children">
                                                     <a href="#">Khóa học ngắn hạn</a>
                                                     <ul class="sub-menu right">
-                                                        <li><a href="https://plusplus.vn/courses/java_core.html">Java core</a></li>
-                                                        <li><a href="https://plusplus.vn/courses/python_core.html">Python core</a></li>
-                                                        <li><a href="https://plusplus.vn/courses/frontend.html">Frontend cơ bản</a></li>
-                                                        <li><a href="https://plusplus.vn/courses/reactjs.html">Lập trình web với ReactJs
+                                                        <li><a href="https://plusplus.vn/courses/java_core.html">Java
+                                                            core</a></li>
+                                                        <li><a href="https://plusplus.vn/courses/python_core.html">Python
+                                                            core</a></li>
+                                                        <li><a href="https://plusplus.vn/courses/frontend.html">Frontend
+                                                            cơ bản</a></li>
+                                                        <li><a href="https://plusplus.vn/courses/reactjs.html">Lập trình
+                                                            web với ReactJs
                                                         </a></li>
-                                                        <li><a href="https://plusplus.vn/courses/vuejs.html">Lập trình web với VueJs</a>
+                                                        <li><a href="https://plusplus.vn/courses/vuejs.html">Lập trình
+                                                            web với VueJs</a>
                                                         </li>
-                                                        <li><a href="https://plusplus.vn/courses/c-base.html">C cơ bản</a></li>
+                                                        <li><a href="https://plusplus.vn/courses/c-base.html">C cơ
+                                                            bản</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -213,10 +231,12 @@
                                                     <a href="https://plusplus.vn/contact.html">Liên hệ tuyển sinh</a>
                                                 </li>
                                                 <li class="menu-item-has-children">
-                                                    <a href="https://plusplus.vn/tutorial/hoc-truc-tuyen.html">Học trực tuyến</a>
+                                                    <a href="https://plusplus.vn/tutorial/hoc-truc-tuyen.html">Học trực
+                                                        tuyến</a>
                                                 </li>
                                                 <li class="menu-item-has-children">
-                                                    <a href="https://plusplus.vn/tutorial/1-huong-dan-thanh-toan.html">Nộp học phí</a>
+                                                    <a href="https://plusplus.vn/tutorial/1-huong-dan-thanh-toan.html">Nộp
+                                                        học phí</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -253,7 +273,8 @@
                 </div>
             </div>
             <div class="canvas-logo">
-                <a href="https://plusplus.vn/index.html"><img src="https://plusplus.vn/assets/images/logo-dark-logo.png" alt="logo"></a>
+                <a href="https://plusplus.vn/index.html"><img src="https://plusplus.vn/assets/images/logo-dark-logo.png"
+                                                              alt="logo"></a>
             </div>
             <div class="offcanvas-text">
                 <p>PlusPlus Academy đồng hành với từng cá nhân, với sự chân thành nỗ lực đem đến một môi trường giáo
@@ -307,116 +328,17 @@
 
 <!-- Main content Start -->
 <div class="main-content">
-    <!-- Breadcrumbs Start -->
-    <div class="rs-breadcrumbs breadcrumbs-overlay">
-        <div class="breadcrumbs-img">
-            <img src="https://plusplus.vn/assets/images/breadcrumbs/2.jpg" alt="Breadcrumbs Image">
-        </div>
-        <div class="breadcrumbs-text white-color">
-            <h1 class="page-title">Tin Tức</h1>
-            <ul>
-                <li>
-                    <a class="active" href="https://plusplus.vn/index.html">Trang chủ</a>
-                </li>
-                <li>Tin tức</li>
-            </ul>
-        </div>
+    <div>
+        <h3 id="title-details" style="padding-left: 15%; padding-right: 10%; padding-top: 15px; margin-bottom: 0px;"
+            th:text=${blogsEntity.getTitle()}>
+        </h3>
     </div>
-    <!-- Breadcrumbs End -->
-
-    <!-- Blog Section Start -->
-    <div class="rs-inner-blog orange-color pt-100 pb-100 md-pt-70 md-pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-12 order-last">
-                    <div class="widget-area">
-
-                        <div class="recent-posts mb-50">
-                            <h3 class="widget-title">Bài đăng gần đây</h3>
-                            <ul th:each="news2:${listNews2}">
-                                <li><a class="title-recents" th:href="@{/news/detail(ID=${news2.getId()}, title=${news2.getTitleSEO()})}"
-                                       th:text="${news2.getTitle()}"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8 pr-50">
-                    <div class="row" th:each="news:${listNews}">
-                        <div class="col-lg-12 mb-70">
-                            <div class="blog-item">
-                                <div class="blog-img">
-                                    <a class="link-img" th:href="@{/news/detail(ID=${news.getId()}, title=${news.getTitleSEO()})}"><img
-                                            class="blog-img1" th:src="${news.getAvatar()}" alt=""></a>
-                                </div>
-                                <div class="blog-content">
-                                    <h3 class="blog-title"><a class="title"
-                                                              th:href="@{/news/detail(ID=${news.getId()}, title=${news.getTitleSEO()})}"
-                                                              th:text="${news.getTitle()}"></a></h3>
-                                    <div class="blog-meta">
-                                        <ul class="btm-cate">
-                                            <li>
-                                                <div class="blog-date" th:text="${news.getTimePost()}">
-                                                    <!--                                                    <i class="fa fa-calendar-check-o" ></i>-->
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="author" th:text="${news.getAuthor()}">
-                                                    <!--                                                    <i class="fa fa-user-o" ></i>-->
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="blog-desc" th:text="${news.getDescription}">
-                                    </div>
-                                    <div class="blog-button">
-                                        <a class="blog-btn" th:href="@{/news/detail(ID=${news.getId()}, title=${news.getTitleSEO()})}">Đọc tiếp</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="pagination-area orange-color text-center mt-30 md-mt-0">
-                <ul class="pagination-part">
-                    <li><a  th:href="@{/news/(pageNum=${pageNum-1})}">
-                        Previous <i class="fa fa-long-arrow-left"></i></a></li>
-                    <li><a id="clickNext" th:href="@{/news/(pageNum=${pageNum+1})}">Next <i class="fa fa-long-arrow-right"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <div id="content-news" style="padding-left: 15%; padding-right: 10%;" th:utext="${blogsEntity.getContent()}">
     </div>
-
-    <!-- Blog Section End -->
-
-    <!-- Newsletter section start -->
-    <div class="rs-newsletter style1 orange-color mb--90 sm-mb-0 sm-pb-70">
-        <div class="container">
-            <div class="newsletter-wrap">
-                <div class="row y-middle">
-                    <div class="col-lg-6 col-md-12 md-mb-30">
-                        <div class="content-part">
-                            <div class="sec-title">
-                                <div class="title-icon md-mb-15">
-                                    <img src="https://plusplus.vn/assets/images/newsletter.png" alt="images">
-                                </div>
-                                <h2 class="title mb-0 white-color">Subscribe to Newsletter</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <form class="newsletter-form">
-                        </form>
-                            <input type="email" name="email" placeholder="Enter Your Email" required="">
-                            <button type="submit">Submit</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Newsletter section end -->
+    <div class="fb-share-button" style="padding-left: 50%; padding-bottom: 10px"
+         th:data-href="'https://plusplus.vn/news/blogs/detail?ID='+${blogsEntity.getId()} +'&title='+${titleSEO}"
+         data-layout="button" data-size="large"><a target="_blank"
+                                                   href="" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
 </div>
 <!-- Main content End -->
 
@@ -427,7 +349,8 @@
             <div class="row">
                 <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
                     <div class="footer-logo mb-30">
-                        <a href="https://plusplus.vn/index.html"><img src="https://plusplus.vn/assets/images/lite-logo.png" alt=""></a>
+                        <a href="https://plusplus.vn/index.html"><img
+                                src="https://plusplus.vn/assets/images/lite-logo.png" alt=""></a>
                     </div>
                     <div class="textwidget pr-60 md-pr-15">
                         <p class="white-color">Học viện đào tạo công nghệ Plusplus - Kick start your future.</p>
@@ -566,7 +489,7 @@
 <script src="https://plusplus.vn/assets/js/contact.form.js"></script>
 <!-- main js -->
 <script src="https://plusplus.vn/assets/js/main.js"></script>
-<!--<script th:src="@{/assets/js/jsnews.js}"></script>-->
+<!--<script th:src="@{/assets/js/js-load-news.js}"></script>-->
 <!-- <script src="/assets/js/jsnews.js" type="text/javascript"></script> -->
 <!-- <script src="index.js" type="text/javascript"></script> -->
 </body>

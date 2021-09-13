@@ -1,13 +1,11 @@
 package com.plusplus.newsweb.entity.repository;
 
-import com.plusplus.newsweb.entity.BlogsEntity;
-import com.plusplus.newsweb.entity.CategoryEntity;
-import org.springframework.data.domain.Pageable;
+import com.plusplus.newsweb.entity.CateEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
-public interface CategoryRepository extends JpaRepository<CategoryEntity, Integer> {
-
-    List<CategoryEntity> findAll();
+@Repository
+public interface CategoryRepository extends JpaRepository<CateEntity, Integer> {
+    List<CateEntity> findALLByStatus(String Status);
 }

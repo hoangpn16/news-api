@@ -9,45 +9,54 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Entity
-@Table(name = "blogs")
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class BlogsEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
+    @Entity
+    @Table(name = "blogs")
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public class BlogsEntity {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column(name = "id")
+        private Integer id;
 
-    @Column(name = "title")
-    private String title;
+        @Column(name = "title")
+        private String title;
 
-    @Column(name = "description")
-    private String description;
+        @Column(name = "description")
+        private String description;
 
-    @Column(name = "avatar")
-    private String avatar;
+        @Column(name = "avatar")
+        private String avatar;
 
-    @Column(name = "content")
-    private String content;
+        @Column(name = "content")
+        private String content;
 
-    @Column(name = "time_posting")
-    private Timestamp timePosting;
+        @Column(name = "created_time")
+        private Timestamp createdTime;
 
-    @Column(name = "status")
-    private String status;
+        @Column(name = "updated_time")
+        private Timestamp updatedTime;
 
-    @Column(name = "author")
-    private String author;
+        @Column(name = "status")
+        private String status;
 
-    @Column(name = "category_id")
-    private Integer categoryId;
+        @Column(name = "author")
+        private String author;
 
-    @Column(name = "view_post")
-    private Integer viewPost;
+        @Column(name = "category_id")
+        private Integer categoryId;
 
-    @Column(name = "like_post")
-    private Integer likePost;
-}
+        @Column(name = "view_post")
+        private Integer viewPost;
+
+        @Column(name = "like_post")
+        private Integer likePost;
+
+        @Column(name = "user_id")
+        private Integer userId;
+
+        @Column(name = "name_censor")
+        private String nameCensor;
+    }
